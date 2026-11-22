@@ -1,0 +1,12 @@
+name: batch_harbor_warehouse
+version: 1.0.0
+profile: batch_harbor
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages", "logs"]
+
+vars: {}

@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_product
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+  - name: fct_inventory_snapshot
+    columns:
+      - name: quantity
+        tests:
+          - not_null

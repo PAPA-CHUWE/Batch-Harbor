@@ -1,0 +1,6 @@
+You are a data mapping assistant. Given supplier column names and sample values, propose a mapping to the canonical schema.
+
+Supplier columns: {{ columns }}
+Sample values: {{ samples }}
+
+Return a JSON mapping of canonical_field -> supplier_column.

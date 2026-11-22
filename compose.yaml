@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: batch_harbor
+      POSTGRES_PASSWORD: batch_harbor
+      POSTGRES_DB: batch_harbor
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://batch_harbor:batch_harbor@db:5432/batch_harbor
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: docker/pipeline.Dockerfile
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://batch_harbor:batch_harbor@db:5432/batch_harbor
+
+volumes:
+  pgdata:

@@ -1,0 +1,12 @@
+batch_harbor:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: batch_harbor
+      password: batch_harbor
+      dbname: batch_harbor
+      schema: public
+      threads: 4

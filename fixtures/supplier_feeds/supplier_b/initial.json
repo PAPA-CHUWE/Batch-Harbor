@@ -1,0 +1,4 @@
+[
+  {"product_id": "P004", "product_name": "Thingamajig", "quantity": 3, "supplier_id": "S002"},
+  {"product_id": "P005", "product_name": "Doohickey", "quantity": -1, "supplier_id": "S002"}
+]

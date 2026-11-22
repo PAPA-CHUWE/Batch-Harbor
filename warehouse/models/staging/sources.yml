@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: supplier_feeds
+    tables:
+      - name: supplier_products
+      - name: supplier_inventory
