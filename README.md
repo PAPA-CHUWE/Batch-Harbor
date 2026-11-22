@@ -1,4 +1,4 @@
-# DataRelay
+# Batch-Harbor
 
 Monorepo for supplier feed ingestion, mapping approval, and inventory catalogue.
 
